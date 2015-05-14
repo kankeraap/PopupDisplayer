@@ -1,0 +1,5 @@
+---
+message: Welcome @player in our Server!
+type: tip
+#duration: infinite -> next update
+...
