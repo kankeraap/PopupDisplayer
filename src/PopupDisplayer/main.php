@@ -44,7 +44,6 @@ public $cfg;
 							}
 
 public function onDisable(){
-		unset($this->players);
 			$this->saveDefaultConfig();
 				$this->getLogger()->info("Plugin Disattivato");
 		}
