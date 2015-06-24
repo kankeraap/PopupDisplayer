@@ -24,7 +24,7 @@ public $cfg;
 			@mkdir($this->getDataFolder()); //crea la cartella dove sara il config.yml
 				$this->saveDefaultConfig(); //salva la configurazione di default del config.yml
 					$this->cfg = $this->getConfig(); //prende le informazioni dal config.yml
-					
+							$this->getServer()->getScheduler()->scheduleRepeatingTask(new Task($this, $message, $cfg["popup-duration"]), 10);
 	}	
 	
 	public function onPlayerJoin(PlayerJoinEvent  $event){
