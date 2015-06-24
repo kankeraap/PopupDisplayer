@@ -16,7 +16,7 @@ class Main extends PluginBase implements Listener{
 public $cfg;
 	
 	public function onLoad(){
-		$this->getLogger()->info("Plugin Attivato");  //getLogger() mostra il messaggio dopo info nella console di PM
+		$this->getLogger()->info("Plugin Enabled");  //getLogger() mostra il messaggio dopo info nella console di PM
 		}
 	
 	public function onEnable(){
@@ -24,7 +24,7 @@ public $cfg;
 			@mkdir($this->getDataFolder()); //crea la cartella dove sara il config.yml
 				$this->saveDefaultConfig(); //salva la configurazione di default del config.yml
 					$this->cfg = $this->getConfig(); //prende le informazioni dal config.yml
-							$this->getServer()->getScheduler()->scheduleRepeatingTask(new Task($this, $message, $cfg["popup-duration"]), 10);
+							$this->getServer()->getScheduler()->scheduleRepeatingTask(new Task($this, $message, $cfg["duration"]), 10);
 	}	
 	
 	public function onPlayerJoin(PlayerJoinEvent  $event){
@@ -45,7 +45,7 @@ public $cfg;
 
 public function onDisable(){
 			$this->saveDefaultConfig();
-				$this->getLogger()->info("Plugin Disattivato");
+				$this->getLogger()->info("Plugin Disabled");
 		}
 }
 
