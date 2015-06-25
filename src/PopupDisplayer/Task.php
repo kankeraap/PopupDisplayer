@@ -18,7 +18,7 @@ class Task extends PluginTask {
     
     public function onRun($tick){
     	$this->plugin = $this->getOwner();
-    	$message = $this->cfg->get("message");
+    	$message = $this->plugin->cfg->get("message");
     	if($this->current <= $this->duration){
     		foreach($this->plugin->getServer()->getOnlinePlayers() as $players){
     			$players->sendPopup($this->plugin->translateColors("&", $this->message));
