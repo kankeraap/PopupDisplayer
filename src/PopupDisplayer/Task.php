@@ -2,18 +2,18 @@
 namespace PopupDisplayer;
 
 
-use PopupDisplayer\main;
+use PopupDisplayer\Main;
 use pocketmine\scheduler\PluginTask;
 
 class Task extends PluginTask {
 	private $message;
 	
- public function __construct(main $plugin, $message, $duration){
+ public function __construct(Main $plugin, $message, $duration){
+ 	parent::__construct($plugin);
         $this->plugin = $plugin;
         $this->message = $message;
         $this->duration = $duration;
         $this->current = 0;
-        parent::__construct($plugin);
     }
     
     public function onRun($tick){
