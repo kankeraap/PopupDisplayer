@@ -18,7 +18,7 @@ class Task extends PluginTask {
     public function onRun($tick){
     	$this->plugin = $this->getOwner();
     	$message = $this->plugin->cfg->get("message");
-    	$type = $this->cfg->get("type");
+    	$type = $this->plugin->cfg->get("type");
     	if($this->current <= $this->duration){
     		foreach($this->plugin->getServer()->getOnlinePlayers() as $players){
     			if($type == "tip"){
