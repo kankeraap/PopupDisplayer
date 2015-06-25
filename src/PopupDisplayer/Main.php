@@ -20,12 +20,10 @@ class Main extends PluginBase implements Listener{
 	}
 	
 	public function onEnable(){
-		$players->sendPopup($this->plugin->translateColors("&", $message));
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		@mkdir($this->getDataFolder()); //crea la cartella dove sara il config.yml
 		$this->saveDefaultConfig(); //salva la configurazione di default del config.yml
 		$this->cfg = $this->getConfig(); //prende le informazioni dal config.yml
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}	
 	
 	public function onPlayerJoin(PlayerJoinEvent  $event){
