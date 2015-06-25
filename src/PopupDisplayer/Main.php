@@ -24,8 +24,8 @@ class Main extends PluginBase implements Listener{
 		@mkdir($this->getDataFolder()); //crea la cartella dove sara il config.yml
 		$this->saveDefaultConfig(); //salva la configurazione di default del config.yml
 		$this->cfg = $this->getConfig(); //prende le informazioni dal config.yml
-		$message = $this->cfg->get("message");
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new Task($this, $message, $cfg["duration"]), 10);
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new Task($this, $cfg["duration"]), 10);
 	}	
 	
 	public function onPlayerJoin(PlayerJoinEvent  $event){
