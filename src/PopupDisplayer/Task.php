@@ -22,9 +22,9 @@ class Task extends PluginTask {
     	if($this->current <= $this->duration){
     		foreach($this->plugin->getServer()->getOnlinePlayers() as $players){
     			if($type == "tip"){
-			$event->getPlayer()->sendTip($message);
+			$players->sendTip($message);
 		}elseif($type == "popup"){
-			$event->getPlayer()->sendPopup($message);
+			$players->sendPopup($message);
 		}
     		}
     	}else{
