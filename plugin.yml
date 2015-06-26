@@ -1,6 +1,6 @@
 name: PopupDisplayer
 main: PopupDisplayer\Main
-version: "2.0"
+version: "2.0.1"
 api: [1.12.0]
 load: STARTUP
 author: Heromine, Flavius12
